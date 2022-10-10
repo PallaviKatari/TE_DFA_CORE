@@ -31,12 +31,12 @@ namespace DFA_CORE.Models
         {
             modelBuilder.Entity<Trainee>(entity =>
             {
-                entity.HasKey(e => e.Tid)
-                    .HasName("PK__Trainees__C456D729900CF3A8");
+                //entity.HasKey(e => e.Tid)
+                //    .HasName("PK__Trainees__C456D729900CF3A8");
 
-                entity.Property(e => e.Tid)
-                    .ValueGeneratedNever()
-                    .HasColumnName("TID");
+                //entity.Property(e => e.Tid)
+                //    .ValueGeneratedNever()
+                //    .HasColumnName("TID");
 
                 entity.Property(e => e.Tage).HasColumnName("TAge");
 

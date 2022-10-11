@@ -12,6 +12,7 @@ namespace DFA_CORE.Controllers
 {
     public class TraineesController : Controller
     {
+        // NToastNotify
         private readonly ILogger<TraineesController> _logger;
         private readonly IToastNotification _toastNotification;
         private readonly TE_Core_MVCContext _context;
@@ -63,6 +64,7 @@ namespace DFA_CORE.Controllers
             {
                 _context.Add(trainee);
                 await _context.SaveChangesAsync();
+                //toastNotification in green color - > SUCCESS
                 _toastNotification.AddSuccessToastMessage("Employee created successfully");
                 return RedirectToAction(nameof(Index));
             }
@@ -103,6 +105,7 @@ namespace DFA_CORE.Controllers
                 {
                     _context.Update(trainee);
                     await _context.SaveChangesAsync();
+                    //toastNotification in yellow color - > WARNING
                     _toastNotification.AddWarningToastMessage("Employee updated successfully");
                 }
                 catch (DbUpdateConcurrencyException)
@@ -155,6 +158,7 @@ namespace DFA_CORE.Controllers
             }
             
             await _context.SaveChangesAsync();
+            //toastNotification in red color - > Error
             _toastNotification.AddErrorToastMessage("Employee deleted successfully");
             return RedirectToAction(nameof(Index));
         }

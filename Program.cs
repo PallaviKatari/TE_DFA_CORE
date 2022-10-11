@@ -4,10 +4,11 @@ using NToastNotify;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
+// NToastNotify
 builder.Services.AddRazorPages().AddNToastNotifyNoty(new NotyOptions
 {
     ProgressBar = true,
-    Timeout = 5000
+    Timeout = 5000 //5 seconds
 });
 
 // Add services to the container.
